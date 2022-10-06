@@ -2,8 +2,8 @@ import { View } from "react-native";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@react-native-material/core";
 import { UserLogin } from "../../models/User";
-import Form from "../../components/Form";
-import Input from "../../components/Input";
+import Form from "../../components/common/Form";
+import Input from "../../components/common/Input";
 export default function Login (){
   
   const {...methods} = useForm<UserLogin>();
@@ -12,15 +12,16 @@ export default function Login (){
     (data) => console.log({data});
   
   const body = <View>
-    <Input label={'userName'}/>
-    <Input label={'password'} secureTextEntry={true}/>
+    <Input label={'userName'} keyboardType={"default"}/>
+    <Input label={'password'} keyboardType={"default"} secureTextEntry={true}/>
   </View>
   
   return(
     <View>
       <Form methods={methods} body={body}/>
       <Button variant="outlined"
-              title="Outlined"
+              color={"on-surface"}
+              title="Iniciar Sesion"
               onPress={methods.handleSubmit
               (onSubmit)}/>
     </View>

@@ -2,8 +2,8 @@ import { View } from "react-native";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@react-native-material/core";
 import { UserRegister } from "../../models/User";
-import Form from "../../components/Form";
-import Input from "../../components/Input";
+import Form from "../../components/common/Form";
+import Input from "../../components/common/Input";
 
 export default function Register (){
   
@@ -13,11 +13,11 @@ export default function Register (){
     (data:UserRegister) => console.log({data});
   
   const body = <View>
-    <Input label={'firstName'}/>
-    <Input label={'lastName'}/>
-    <Input label={'email'}/>
-    <Input label={'userName'}/>
-    <Input label={'password'} secureTextEntry={true}/>
+    <Input label={'firstName'} keyboardType={"default"}/>
+    <Input label={'lastName'} keyboardType={"default"}/>
+    <Input label={'email'} keyboardType={"email-address"}/>
+    <Input label={'userName'} keyboardType={"default"}/>
+    <Input label={'password'} keyboardType={"default"} secureTextEntry={true}/>
   </View>
   
   return(
