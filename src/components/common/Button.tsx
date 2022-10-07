@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Text, TouchableOpacity } from "react-native";
-import { styles as stylesFile } from "../../styles/components/common/Button.styles";
+import { styles as stylesFile } from "../../styles/components/common/Button.style";
 
 interface ButtonProps{
   text: string,
