@@ -9,7 +9,7 @@ type FormProps = {
 
 export default function Form(props:FormProps){
   const { body, methods } = props
-  return <View>
+  return <View style={{width: '100%'}}>
     <FormProvider {...methods}>
       {body}
     </FormProvider>

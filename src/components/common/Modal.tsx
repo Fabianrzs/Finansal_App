@@ -7,7 +7,7 @@ interface ModalProps{
   body:  JSX.Element
   animated?: boolean;
   animationType?: 'none' | 'slide' | 'fade';
-  transparent?: boolean;
+  transparent: boolean;
   visible: boolean;
   setVisible: Function;
 }

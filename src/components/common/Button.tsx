@@ -1,31 +1,27 @@
 import React, { useRef } from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Pressable, Text, TouchableHighlight, TouchableOpacity, View } from "react-native";
 import { styles as stylesFile } from "../../styles/components/common/Button.style";
 
 interface ButtonProps{
-  text: string,
-  onPress: Function,
-  styles?: any,
+  title: string,
+  onPress: () => void,
+  stylesButton?: any,
+  stylesText?:any,
   size?: number,
   disabled?: boolean,
-  onLongPress?: Function,
+  onLongPress?:  () => void,
   activeOpacity?: number,
 }
 
 export default function Button(props:ButtonProps){
-  const {text, onPress, styles, disabled,activeOpacity, size, onLongPress} = props
-  const ref = useRef(null)
+  const {title, onPress, stylesButton, disabled,activeOpacity, size,stylesText, onLongPress} = props
+  
   return (
-    <view style={stylesFile.container}>
-      <TouchableOpacity
-        ref={ref}
-        activeOpacity={activeOpacity? activeOpacity:0.5}
-        disabled={disabled}
-        onLongPress={()=>onLongPress}
-        onPress={()=>onPress}
-        style={[styles? styles:stylesFile.button ]}>
-        <Text>{text}</Text>
-      </TouchableOpacity>
-    </view>
+    <TouchableOpacity style={[stylesButton? stylesButton:stylesFile.button ]}
+               disabled={disabled} activeOpacity={activeOpacity? activeOpacity : 0.9}
+               onLongPress={onLongPress}
+               onPress={onPress}>
+      <Text style={stylesText? stylesText:stylesFile.text}>{title}</Text>
+    </TouchableOpacity>
   )
 }

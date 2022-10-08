@@ -1,18 +1,25 @@
 import { StyleSheet } from "react-native";
+import { lightWhite, primaryBlue } from "../../_varibles";
 
 export const styles = StyleSheet.create({
-  container: {
+  centeredView: {
     flex: 1,
-    paddingHorizontal: 70
+    justifyContent: "center",
+    alignItems: "center"
   },
   button: {
+    backgroundColor: lightWhite,
+    padding:15,
+    shadowRadius: 50,
     alignItems: "center",
-    backgroundColor: "rgba(5,120,203,0.58)",
-    padding: 10,
-    borderRadius: 25,
-    shadowColor: 'black',
-    shadowOpacity: 0.5,
-    elevation: 5,
-    shadowRadius: 10 ,
+    justifyContent: "center",
+    shadowOpacity: 1,
+    borderRadius: 30,
+    elevation:1
   },
+  text:{
+    color : primaryBlue,
+    fontSize:20,
+    fontWeight: "bold"
+  }
 });

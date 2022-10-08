@@ -1,17 +1,21 @@
 import { View } from "react-native";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "@react-native-material/core";
-import { UserLogin } from "../../models/User";
+import { UserRegister } from "../../models/User";
 import Form from "../../components/common/Form";
 import Input from "../../components/common/Input";
-export default function Login (){
+
+export default function RegisterView (){
   
-  const {...methods} = useForm<UserLogin>();
+  const {...methods} = useForm<UserRegister>({mode: "onChange"});
   
-  const onSubmit: SubmitHandler<UserLogin> =
-    (data) => console.log({data});
+  const onSubmit: SubmitHandler<UserRegister> =
+    (data:UserRegister) => console.log({data});
   
   const body = <View>
+    <Input label={'firstName'} keyboardType={"default"}/>
+    <Input label={'lastName'} keyboardType={"default"}/>
+    <Input label={'email'} keyboardType={"email-address"}/>
     <Input label={'userName'} keyboardType={"default"}/>
     <Input label={'password'} keyboardType={"default"} secureTextEntry={true}/>
   </View>
@@ -20,8 +24,7 @@ export default function Login (){
     <View>
       <Form methods={methods} body={body}/>
       <Button variant="outlined"
-              color={"on-surface"}
-              title="Iniciar Sesion"
+              title="Outlined"
               onPress={methods.handleSubmit
               (onSubmit)}/>
     </View>
