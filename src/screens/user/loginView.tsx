@@ -30,6 +30,8 @@ export default function LoginView (){
       <Text style={styles.title}>LOGIN</Text>
       <Form methods={methods} body={body}/>
       <Button
+        colorText='light'
+        typeButton='outlet'
         title="Iniciar Sesion"
         onPress={methods.handleSubmit
         (onSubmit)}
