@@ -4,12 +4,12 @@ import { styles as stylesFile } from "../../styles/components/common/Button.styl
 
 interface ButtonProps{
   title: string,
-  onPress: () => void,
+  onPress: Function,
   stylesButton?: any,
   stylesText?:any,
   size?: number,
   disabled?: boolean,
-  onLongPress?:  () => void,
+  onLongPress?:  Function,
   activeOpacity?: number,
 }
 
@@ -19,8 +19,8 @@ export default function Button(props:ButtonProps){
   return (
     <TouchableOpacity style={[stylesButton? stylesButton:stylesFile.button ]}
                disabled={disabled} activeOpacity={activeOpacity? activeOpacity : 0.9}
-               onLongPress={onLongPress}
-               onPress={onPress}>
+               onLongPress={()=>onLongPress}
+               onPress={()=>onPress}>
       <Text style={stylesText? stylesText:stylesFile.text}>{title}</Text>
     </TouchableOpacity>
   )
