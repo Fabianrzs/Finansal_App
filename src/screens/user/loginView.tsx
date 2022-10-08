@@ -5,7 +5,7 @@ import Form from "../../components/common/Form";
 import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
 import React, { useState } from "react";
-import { styles } from "../../styles/scream/user/Loging.style";
+import { styles } from "../../themes/scream/user/Loging.style";
 import Modal from "../../components/common/Modal";
 export default function LoginView (){
   
