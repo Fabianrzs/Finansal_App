@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal as ModalNative, ModalBaseProps, Pressable, Text, View } from "react-native";
-import { styles } from "../../themes/components/common/Modal.style";
+import { styles } from "../../themes/components/common/Modal.themes";
 
 interface ModalProps{
   title?: string

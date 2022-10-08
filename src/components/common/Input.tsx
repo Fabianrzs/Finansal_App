@@ -2,7 +2,7 @@ import React from "react";
 import { TextInput } from "@react-native-material/core";
 import { useFormContext, Controller } from "react-hook-form";
 import { KeyboardType, Text, View } from "react-native";
-import { styles } from "../../themes/components/common/Input.style";
+import { styles } from "../../themes/components/common/Input.themes";
 type InputProps = {
   label: string
   keyboardType: KeyboardType

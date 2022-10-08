@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleProp, TextStyle, ViewStyle } from "react-native";
-import { styles } from "../../../themes/components/common/Button.style"
+import { styles } from "../../../themes/components/common/Button.themes";
 
 export default function useButtonStyle (typeButton:string | undefined, colorText:string | undefined){
 
