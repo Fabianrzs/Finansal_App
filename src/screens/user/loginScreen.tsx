@@ -33,8 +33,7 @@ export default function LoginScreen ({ navigation }:any){
         colorText='light'
         typeButton='outlet'
         title="Iniciar Sesion"
-        onPress={methods.handleSubmit
-        (onSubmit)}
+        onPress={()=> navigation.navigate('Loged')}
       />
       <Button
         title="Registro"

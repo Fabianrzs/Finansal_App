@@ -1,22 +1,20 @@
 import React from 'react'
 import { NavigationContainer } from "@react-navigation/native";
 import LoginScreen from "../screens/user/loginScreen";
-import HomeScreen from "../screens/home/homeScreen";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import RegisterScreen from "../screens/user/registerScreen";
+import TabNavigator from "./TabNavigator";
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export default function TabNavigator(){
+export default function StackNavigator(){
   return(
-    <NavigationContainer>
-      <Tab.Navigator
+      <Stack.Navigator
         screenOptions={{
           headerShown: false,}}>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Informe" component={LoginScreen} />
-        <Tab.Screen name="Registros" component={RegisterScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Loged" component={TabNavigator} />
+      </Stack.Navigator>
   )
 }
