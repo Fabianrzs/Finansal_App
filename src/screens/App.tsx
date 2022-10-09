@@ -1,10 +1,9 @@
 import React from "react";
-import { NavigationContainer } from '@react-navigation/native';
-import LoginView from "./user/loginView";
+import TabNavigator from "../routes/StackNavigator";
 
 const App = () => {
   return (
-    <LoginView/>
+      <TabNavigator/>
   )
 };
 

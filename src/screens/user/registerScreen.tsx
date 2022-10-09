@@ -5,7 +5,7 @@ import { UserRegister } from "../../models/User";
 import Form from "../../components/common/Form";
 import Input from "../../components/common/Input";
 
-export default function RegisterView (){
+export default function RegisterScreen (){
   
   const {...methods} = useForm<UserRegister>({mode: "onChange"});
   

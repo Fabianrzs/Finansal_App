@@ -7,7 +7,7 @@ import Button from "../../components/common/Button";
 import React, { useState } from "react";
 import Modal from "../../components/common/Modal";
 import { styles } from "../../themes/scream/user/Login.themes";
-export default function LoginView (){
+export default function LoginScreen ({ navigation }:any){
   
   const [open, setOpen] = useState<boolean>(false)
   
@@ -35,6 +35,11 @@ export default function LoginView (){
         title="Iniciar Sesion"
         onPress={methods.handleSubmit
         (onSubmit)}
+      />
+      <Button
+        title="Registro"
+        colorText='dark'
+        onPress={()=> navigation.navigate('Register')}
       />
     </View>
   )
