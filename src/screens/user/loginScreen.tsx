@@ -20,8 +20,8 @@ export default function LoginScreen ({ navigation }:any){
     }
   
   const body = <View>
-    <Input label={'userName'} keyboardType={"default"}/>
-    <Input label={'password'} keyboardType={"default"} secureTextEntry={true}/>
+    <Input label={'Username'} keyboardType={"default"}/>
+    <Input label={'Password'} keyboardType={"default"} secureTextEntry={true}/>
   </View>
   const body2 = <Text style={{color : 'red'}}>No sea bruto y llene los campos </Text>
   return(
@@ -32,11 +32,11 @@ export default function LoginScreen ({ navigation }:any){
       <Button
         colorText='light'
         typeButton='outlet'
-        title="Iniciar Sesion"
+        title="Login"
         onPress={()=> navigation.navigate('Loged')}
       />
       <Button
-        title="Registro"
+        title="Register"
         colorText='dark'
         onPress={()=> navigation.navigate('Register')}
       />

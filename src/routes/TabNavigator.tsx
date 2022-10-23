@@ -1,8 +1,8 @@
 import React from 'react'
-import LoginScreen from "../screens/user/loginScreen";
 import HomeScreen from "../screens/home/homeScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import RegisterScreen from "../screens/user/registerScreen";
+import Informe from "../screens/aplication/informe";
+import Registro from "../screens/aplication/registro";
 
 const Tab = createBottomTabNavigator();
 
@@ -12,8 +12,8 @@ export default function TabNavigator(){
       screenOptions={{
         headerShown: false,}}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Informe" component={LoginScreen} />
-      <Tab.Screen name="Registros" component={RegisterScreen} />
+      <Tab.Screen name="Informe" component={Informe} />
+      <Tab.Screen name="Registros" component={Registro} />
     </Tab.Navigator>
   )
 }

@@ -16,7 +16,6 @@ export default function useButtonStyle (typeButton:string | undefined, colorText
         setButton(styles.button)
         break;
       case 'FAB':
-        
         break;
       default :
         setButton(styles.button)
@@ -27,7 +26,7 @@ export default function useButtonStyle (typeButton:string | undefined, colorText
   const stylesText = () =>{
     switch (colorText){
       case 'primary':
-        
+        setText([styles.text, styles.primary])
         break;
       case 'danger':
         setText([styles.text, styles.danger])
