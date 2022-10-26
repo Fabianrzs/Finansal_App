@@ -13,5 +13,7 @@ export interface UserRegister{
   lastName: string
   email:string
   numberPhone: number
+  userName: string
+  password: string
 }
 

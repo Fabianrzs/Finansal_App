@@ -8,15 +8,28 @@ import React, { useState } from "react";
 import Button from "../../components/common/Button";
 import Modal from "../../components/common/Modal";
 import { styles } from "../../themes/scream/user/Login.themes";
+import {auth} from "../../utils/Firebase"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 
 export default function RegisterScreen (){
+  
   
   const [open, setOpen] = useState(false)
   
   const {...methods} = useForm<UserRegister>({mode: "onChange"});
   
   const onSubmit: SubmitHandler<UserRegister> =
-    (data:UserRegister) => console.log({data});
+    (data:UserRegister) => {
+      console.log(data);
+      createUserWithEmailAndPassword(auth, data.userName, data.password )
+      .then(()=>{
+        console.log("Logeadito jeje: ", data)
+      })
+      .catch((e)=>{
+        console.log("Error: ",e);
+      })
+    }
   
   const body = <View>
     <Input label={'FirstName'} keyboardType={"default"}/>
@@ -42,7 +55,7 @@ export default function RegisterScreen (){
             title="Registro"
             colorText='primary'
             typeButton={'btn'}
-            onPress={()=> setOpen(true)}
+            onPress={methods.handleSubmit(onSubmit)}
           />
         </View>
     </View>

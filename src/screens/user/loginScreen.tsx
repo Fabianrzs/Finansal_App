@@ -7,16 +7,21 @@ import Button from "../../components/common/Button";
 import React, { useState } from "react";
 import Modal from "../../components/common/Modal";
 import { styles } from "../../themes/scream/user/Login.themes";
+import firebaseService from "../../services/firebaseService";
+import auth from '@react-native-firebase/auth';
+import { app } from "../../utils/Firebase";
+
 export default function LoginScreen ({ navigation }:any){
-  
+
   const [open, setOpen] = useState<boolean>(false)
-  
   const {...methods} = useForm<UserLogin>();
+  const {login} = firebaseService;
   
   const onSubmit: SubmitHandler<UserLogin> =
     (data) => {
-      console.log({ data });
-      setOpen(true);
+      login(data).then((response)=>{
+        console.log(response)
+      }).catch((err)=>{console.log(err)})
     }
   
   const body = <View>
@@ -33,9 +38,9 @@ export default function LoginScreen ({ navigation }:any){
         colorText='light'
         typeButton='outlet'
         title="Login"
-        onPress={()=> navigation.navigate('Loged')}
+        onPress={methods.handleSubmit(onSubmit)}
       />
-      <Button
+      <Button stylesButton={{padding: 5, border: 1}}
         title="Register"
         colorText='dark'
         onPress={()=> navigation.navigate('Register')}

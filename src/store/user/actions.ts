@@ -1,9 +1,8 @@
+
 export default function hola() {
   return 'hola'
 }
 /*
-import { UserLogin } from "../../models/UserLogin";
-
 export const signIn = (data: UserLogin) => (dispatch: AppDispatch) => {
   dispatch(userLoading());
   signInWithEmailAndPassword(data.Password, data.Password)
